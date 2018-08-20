@@ -61,11 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Code\Drag and Drop\DragAndDropCell.cs" />
-    <Compile Include="Assets\Code\Drag and Drop\DragAndDropItem.cs" />
-    <Compile Include="Assets\Code\Drag and Drop\DummyControlUnit.cs" />
     <Compile Include="Assets\Code\Menu.cs" />
     <Compile Include="Assets\Code\Player.cs" />
+    <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropCell.cs" />
+    <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropItem.cs" />
+    <Compile Include="Assets\SimpleDragAndDrop\Scripts\DummyControlUnit.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Alex/Documents/Unity Projects/BearBasics/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
