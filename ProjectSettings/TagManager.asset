@@ -48,11 +48,11 @@ TagManager:
   - name: Menu Background
     uniqueID: 2283878311
     locked: 0
-  - name: Buttons
-    uniqueID: 2463668509
-    locked: 0
   - name: Cells
     uniqueID: 1957624157
+    locked: 0
+  - name: Buttons
+    uniqueID: 2463668509
     locked: 0
   - name: Path
     uniqueID: 4196809175

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     Vector3 mousePosition;
-    int snapSize = 5;
+    int snapSize = 1;
     Vector3 startPos;
 
     // Use this for initialization
@@ -28,22 +28,27 @@ public class Item : MonoBehaviour
         transform.position = Vector2.Lerp(transform.position, mousePosition, 10);
     }
 
-    /*
+    
     private void OnMouseUp(){
 
         //get closest cell
         GameObject cell = FindClosestCell();
+        Cell script = cell.GetComponent<Cell>();
+        
 
 
         //get its center
         Vector3 center = cell.transform.position;
+        
 
         //move this to cells center if its close enough
-        if (Vector3.Distance(center, this.gameObject.transform.position) <= snapSize){
+        if (Vector3.Distance(center, this.gameObject.transform.position) <= snapSize && script.HasItem() == false){
             this.transform.position = center;
+            script.HasItem(true);
         }
         else{
-            this.gameObject.transform.position = startPos;
+            MoveToStart();
+            script.HasItem(false);
         }
         
     }
@@ -52,7 +57,7 @@ public class Item : MonoBehaviour
     public GameObject FindClosestCell()
     {
         GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("cell");
+        gos = GameObject.FindGameObjectsWithTag("Cell");
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;
@@ -68,7 +73,14 @@ public class Item : MonoBehaviour
         }
         return closest;
     }
-    */
+    private void MoveToStart() { 
+        float speed = .1f;
+        while (this.gameObject.transform.position != startPos) {
+            // Move our position a step closer to the target.
+            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, startPos, speed * Time.deltaTime);
+        }
+    }
+    
 
 
 }
